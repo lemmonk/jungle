@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    exist = User.find_by_email(params[:email])
     user = User.new(user_params)
-  if user.save
+  if !exist && user.save
     session[:user_id] = user.id
     redirect_to '/'
   else
