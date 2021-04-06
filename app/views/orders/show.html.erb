@@ -1,20 +1,34 @@
 <section class="orders-show">
 
   <header class="page-header">
-  <%= 
-  puts '-------------------------'
-  puts @order.id
-  puts @order.email
-  puts @order.total_cents
-  puts @order
   
-  puts '---------------------------'
-  
-  %>
     <h1>Order #<%= @order.id %></h1>
   </header>
+<% puts @order.email 
+ 
+  for i in @order.line_items do
+    
+    puts i.product.name
+    puts i.product.description
+    puts i.product.image
+    puts i.quantity
+    puts i.total_price
+      
+   end
+%>
+<div class="order-summary jumbotron">
+<% for i in @order.line_items do %>
+ <h3><%= i.product.name %></h3>
+ <p><%= i.product.description %></p>
+ <h4>Price: $<%= i.item_price %></h4>
+ <img width='200px' height='200px' src=<%= i.product.image %>/>
+ <h5 style='border-bottom-style: solid; padding-bottom:10px;'>Qt:<%= i.quantity %></h5>
 
-  <div class="order-summary jumbotron">
+
+<% end %>
+<h3>Total: $<%= i.total_price %></h3>
+<br>
+    <h6> <%= @order.email %> </h6>
     <h4>Thank you for your order!</h4>
   </div>
 
