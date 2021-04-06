@@ -1,6 +1,16 @@
 <section class="orders-show">
 
   <header class="page-header">
+  <%= 
+  puts '-------------------------'
+  puts @order.id
+  puts @order.email
+  puts @order.total_cents
+  puts @order
+  
+  puts '---------------------------'
+  
+  %>
     <h1>Order #<%= @order.id %></h1>
   </header>
 
