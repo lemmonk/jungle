@@ -25,10 +25,12 @@ Rails.application.routes.draw do
   get 'auth' => 'users#new'
   
   get '/login' => 'sessions#new'
+  get '/loginError' => 'sessions#loginError'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
   get '/signup' => 'users#new'
+  get '/registrationError' => 'users#registrationError'
   post '/users' => 'users#create'
 
 
