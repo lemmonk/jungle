@@ -6,7 +6,7 @@ RSpec.describe UserSpec, type: :model do
   it 'VALIDATE USER' do
     @user = User.new(
       id: 1,
-      name_first: "Kyle",
+      name_first: "Koda",
       name_last: "Lemmon",
       email: "kyle@gmail.com",
       password: "********",
