@@ -1,15 +1,13 @@
 
 <h1>Register</h1>
-<br>
+<h3 style='color:red;'>Invalid Credentials.</h3> 
+<br><br>
 <%= form_for :user, url: '/users' do |f| %>
 
   First Name:<br> <%= f.text_field :name_first %>
   <br><br>
   Last Name:<br> <%= f.text_field :name_last %>
   <br><br>
-  <% if params[:exist] == true %>
-  <h3>Exist</h3>  
-<% end %> 
   Email:<br> <%= f.text_field :email %>
   <br><br>
   Password:<br> <%= f.password_field :password %>

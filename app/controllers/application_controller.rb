@@ -8,7 +8,14 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  
+    if User.find_by_id(session[:user_id]).present?
+      @current_user = User.find(session[:user_id]) 
+    else
+      @current_user = nil
+      session[:user_id] = nil
+    end
+    
   end
   helper_method :current_user
 
